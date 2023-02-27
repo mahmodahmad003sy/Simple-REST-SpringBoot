@@ -15,16 +15,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Person;
-import com.example.demo.service.personService;
+import com.example.demo.service.PersonService;
 
 @RequestMapping("/api/v1/person")
 @RestController
-public class personController {
+public class PersonController {
 
-    private final personService personService;
+    private final PersonService personService;
 
     @Autowired
-    public personController(personService personService) {
+    public PersonController(PersonService personService) {
         super();
 
         this.personService = personService;

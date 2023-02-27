@@ -6,7 +6,7 @@ import java.util.UUID;
 
 import com.example.demo.model.Person;
 
-public interface personDao {
+public interface PersonDao {
 
     int insertPerson(UUID id, Person person);
 

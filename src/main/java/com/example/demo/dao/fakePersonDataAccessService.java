@@ -1,20 +1,18 @@
 package com.example.demo.dao;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import javax.print.attribute.standard.MediaSize.Other;
 
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.model.Person;;
+import com.example.demo.model.Person;
 
 @Repository("fake-DAO")
-public class fakePersonDataAccessService implements personDao {
+public class FakePersonDataAccessService implements PersonDao {
     private static List<Person> Db = new ArrayList<>();
-
+      
     @Override
     public int insertPerson(UUID id, Person person) {
         Db.add(new Person(id, person.getName()));
@@ -22,7 +20,7 @@ public class fakePersonDataAccessService implements personDao {
     }
 
     @Override
-    public int deletePersonByUuid(UUID id) {
+    public int deletePersonByUuid(UUID  id) {
         Optional<Person> personToDelete = getPersonByUuid(id);
         if (personToDelete.isEmpty()) {
             return 0;
